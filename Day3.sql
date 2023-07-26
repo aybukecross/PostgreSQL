@@ -314,3 +314,37 @@ SELECT calisan_id AS id,calisan_isim AS isim FROM workers;
 SELECT calisan_id AS id,calisan_isim || calisan_dogdugu_sehir AS isim_sehir FROM workers;
 
 SELECT calisan_id AS id,calisan_isim ||' - '||calisan_dogdugu_sehir AS isim_sehir FROM workers;
+
+/*-------- ÖDEV --------
+1. Soru: Bir "Products" tablosu düşünelim. Bu tabloda ürünlere ait bilgiler bulunmaktadır. Tabloda aşağıdaki alanlar yer almaktadır:
+product_id (ürün numarası)
+product_name (ürün adı)
+category (ürün kategorisi)
+price (ürün fiyatı)
+stock_quantity (stok miktarı)
+Bu tablodan "category" alanı "Electronics" olan ve "price" alanı 1000 TL üzerinde olan ürünleri listeleyen SQL sorgusunu yazınız.
+
+2. Soru: Bir "Employees" tablosu düşünelim. Bu tabloda şirkette çalışanlara ait bilgiler bulunmaktadır. Tabloda aşağıdaki alanlar yer almaktadır:
+employee_id (çalışan numarası)
+employee_name (çalışan adı)
+department (çalışanın bağlı olduğu departman)
+salary (çalışanın maaşı)
+hire_date (çalışanın işe başlama tarihi)
+Bu tablodan "department" alanı "Sales" olan ve "salary" alanı 5000 TL'den fazla olan çalışanların isimlerini ve maaşlarını listeleyen SQL sorgusunu yazınız.
+
+3. Soru: Bir "Orders" tablosu düşünelim. Bu tabloda müşterilere ait sipariş bilgileri bulunmaktadır. Tabloda aşağıdaki alanlar yer almaktadır:
+order_id (sipariş numarası)
+customer_name (müşteri adı)
+order_date (sipariş tarihi)
+total_amount (toplam tutar)
+status (sipariş durumu)
+Bu tablodan "total_amount" alanı 1000 TL üzerinde olan ve "status" alanı "Shipped" olan siparişleri listeleyen SQL sorgusunu yazınız.
+
+4.Soru: Bir "Books" tablosu düşünelim. Bu tabloda kitaplara ait bilgiler bulunmaktadır. Tabloda aşağıdaki alanlar yer almaktadır:
+book_id (kitap numarası)
+book_name (kitap adı)
+author (yazar adı)
+genre (kitap türü)
+publication_year (yayın yılı)
+Bu tablodan "genre" alanı "Romance" olan ve "publication_year" alanı 2000 yılından sonra olan kitapları listeleyen SQL sorgusunu yazınız.
+*/
