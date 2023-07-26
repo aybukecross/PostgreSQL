@@ -310,4 +310,6 @@ SELECT * FROM workers;
 
 SELECT calisan_id AS id,calisan_isim AS isim FROM workers;
 
+SELECT calisan_id AS id,calisan_isim || calisan_dogdugu_sehir AS isim_sehir FROM workers;
+
 SELECT calisan_id AS id,calisan_isim ||' - '||calisan_dogdugu_sehir AS isim_sehir FROM workers;
