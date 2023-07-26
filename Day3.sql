@@ -208,10 +208,20 @@ SELECT *
 FROM musteriler
 WHERE urun_isim IN ('Orange','Apple','Apricot');
 
+--Müşteriler tablosundan müşteri ismi 'John', 'Mark' veya 'Eddie' olan verileri listeleyiniz.
+SELECT *
+FROM musteriler
+WHERE musteri_isim IN ('John','Mark','Eddie');
+
 --Müşteriler tablosundan ürün ismi 'Orange', 'Apple' ve 'Apricot' olmayan verileri listeleyiniz.
 SELECT *
 FROM musteriler
 WHERE urun_isim NOT IN ('Orange','Apple','Apricot');
+
+--Müşteriler tablosundan müşteri ismi 'John', 'Mark' veya 'Eddie' olmayan verileri listeleyiniz.
+SELECT *
+FROM musteriler
+WHERE musteri_isim NOT IN ('John','Mark','Eddie');
 
 --21-BETWEEN .. AND .. Komutu
 --Müşteriler tablosunda urun_id 20 ile 40(dahil) arasinda olan urunlerin tum bilgilerini listeleyiniz
