@@ -148,11 +148,11 @@ INSERT INTO talebeler VALUES(127, 'Mustafa Bak', 'Can',99);
 INSERT INTO talebeler VALUES(128, 'Mustafa Bak', 'Ali', 99);
 INSERT INTO talebeler VALUES(129, 'Mehmet Bak', 'Alihan', 89);
 
-INSERT INTO notlar VALUES ('123','kimya',75);
-INSERT INTO notlar VALUES ('124', 'fizik',65);
-INSERT INTO notlar VALUES ('125', 'tarih',90);
-INSERT INTO notlar VALUES ('126', 'Matematik',90);
-INSERT INTO notlar VALUES ('127', 'Matematik',90);
+INSERT INTO notlar VALUES (123,'kimya',75);
+INSERT INTO notlar VALUES (124, 'fizik',65);
+INSERT INTO notlar VALUES (125, 'tarih',90);
+INSERT INTO notlar VALUES (126, 'Matematik',90);
+INSERT INTO notlar VALUES (127, 'Matematik',90);
 INSERT INTO notlar VALUES (null, 'tarih',90);
 
 --notlar tablosundan id=123 olan kaydı siliniz.
