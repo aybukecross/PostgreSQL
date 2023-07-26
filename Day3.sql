@@ -177,6 +177,7 @@ DROP TABLE talebeler;--ilişki tanımlı old. için silmez
 DROP TABLE talebeler CASCADE;--ilişki iptal edilip silme gerçekleşir
 
 --talebeler1 tablosunu siliniz.
+DROP TABLE talebeler1;
 DROP TABLE IF EXISTS talebeler1;--hata almamak için
 
 --20-IN CONDITION
