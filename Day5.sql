@@ -282,3 +282,34 @@ SELECT city, number maas_kapino FROM contact_info WHERE address_id=8
 SELECT city FROM developers
 UNION
 SELECT sehir FROM calisanlar3
+
+/*-------- ÖDEV --------
+Veritabanında bulunan bir tabloya yeni veriler eklemek ve mevcut verileri güncellemek için "UPDATE" komutu kullanılır. Bu ödevde, mevcut bir tabloyu güncelleme işlemleri yapmanızı istiyorum.
+
+1. Soru: Bir "Employees" tablosu düşünelim. Bu tabloda şirkette çalışanlara ait bilgiler bulunmaktadır. Tabloda aşağıdaki alanlar yer almaktadır:
+employee_id (çalışan numarası)
+employee_name (çalışan adı)
+department (çalışanın bağlı olduğu departman)
+salary (çalışanın maaşı)
+Bu tabloyu kullanarak aşağıdaki güncelleme işlemlerini yapınız:
+
+a) "employee_id" değeri 101 olan çalışanın maaşını 5000 TL olarak güncelleyin.
+b) "employee_id" değeri 102 olan çalışanın departmanını "Sales" olarak güncelleyin.
+c) "employee_id" değeri 103 olan çalışanın adını "John Doe" olarak güncelleyin.
+d) "employee_id" değeri 104 olan çalışanın maaşını 5500 TL ve departmanını "Marketing" olarak güncelleyin.
+e) "employee_id" değeri 105 olan çalışanın adını "Jane Smith" ve maaşını 6000 TL olarak güncelleyin.
+
+2. Soru: Bir "Products" tablosu düşünelim. Bu tabloda ürünlere ait bilgiler bulunmaktadır. Tabloda aşağıdaki alanlar yer almaktadır:
+product_id (ürün numarası)
+product_name (ürün adı)
+category (ürün kategorisi)
+price (ürün fiyatı)
+stock_quantity (stok miktarı)
+Bu tabloyu kullanarak aşağıdaki güncelleme işlemlerini yapınız:
+
+a) "product_id" değeri 201 olan ürünün fiyatını 150 TL olarak güncelleyin.
+b) "product_id" değeri 202 olan ürünün stok miktarını 100 adet arttırın.
+c) "product_id" değeri 203 olan ürünün adını "New Product" olarak güncelleyin.
+d) "product_id" değeri 204 olan ürünün fiyatını 200 TL, stok miktarını 50 adet azaltın ve kategorisini "Electronics" olarak güncelleyin.
+e) "product_id" değeri 205 olan ürünün fiyatını 300 TL ve stok miktarını 20 adet olarak güncelleyin.
+*/
