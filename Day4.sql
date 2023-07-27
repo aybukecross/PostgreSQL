@@ -89,7 +89,8 @@ SELECT marka_id,marka_isim,(SELECT COUNT(DISTINCT sehir)
 FROM markalar;
 
 --DISTINCT komutu:sadece farklı olan değerleri gösterir
-SELECT DISTINCT(sehir) FROM calisanlar3;
+SELECT DISTINCT sehir FROM calisanlar3; --1. Kullanım
+SELECT DISTINCT(sehir) FROM calisanlar3; --2. Kullanım
 SELECT COUNT(DISTINCT(sehir)) FROM calisanlar3;
 
 --VIEW oluşturma
