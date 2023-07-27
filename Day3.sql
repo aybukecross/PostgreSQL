@@ -308,7 +308,6 @@ INSERT INTO workers VALUES(345678901, 'Mine Bulut', 'Izmir');
 
 SELECT * FROM workers;
 
-SELECT calisan_id AS id,calisan_isim AS isim FROM workers;
 
 -- Concatenation İşlemi: İki sütunu birleştirerek tek bir sütun içinde gösterebilirsiniz.
 SELECT calisan_id AS id,calisan_isim || calisan_dogdugu_sehir AS isim_sehir FROM workers;

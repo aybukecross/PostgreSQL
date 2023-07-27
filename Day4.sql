@@ -18,13 +18,13 @@ WHERE isyeri=  (SELECT marka_isim
 			    FROM markalar 
 			    WHERE marka_id=100);
 
---INTERVIEW QUESTION:calisanlar3 tablosunda max maaşı alan çalışanın tüm fieldlarını listeleyiniz. 
+--INTERVIEW QUESTION:calisanlar3 tablosunda max maaşı alan çalışanın tüm bilgilerini listeleyiniz. 
 SELECT *
 FROM calisanlar3 
 WHERE maas=(SELECT MAX(maas) 
 			FROM calisanlar3);
 			
---Interview Question:calisanlar3 tablosunda ikinci en yüksek maaşı gösteriniz.ÖDEV
+--Interview Question:calisanlar3 tablosunda ikinci en yüksek maaşı gösteriniz.
 --(en yüksek maaştan az ama sütündaki diğer maaşlardan en yükseği)
 
 SELECT MAX(maas)
