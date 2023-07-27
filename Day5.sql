@@ -191,7 +191,94 @@ WHERE maas>(SELECT AVG(maas) FROM calisanlar3)
 ORDER BY maas;
 
 
+--29-UNION:iki farklı sorgunun sonucunu birleştirerek görüntülememizi sağlar.
+          --tekrarlı değerleri göstermez.
+--UNION ALL operator:UNION ile aynı işlevi görür ancak tekrarlı verileri de gösterir
+
+DROP TABLE developers;
+
+CREATE TABLE developers(
+id SERIAL PRIMARY KEY,
+name varchar(50),
+email varchar(50) UNIQUE,
+salary real,
+prog_lang varchar(20),
+city varchar(50),
+age int	
+);
+
+INSERT INTO developers(name,email,salary,prog_lang,city,age) VALUES('Abdullah Bey','abdullah@mail.com',4000,'Java','Ankara',28);
+INSERT INTO developers(name,email,salary,prog_lang,city,age) VALUES('Mehmet Bey','mehmet@mail.com',5000,'JavaScript','Istanbul',35);
+INSERT INTO developers(name,email,salary,prog_lang,city,age) VALUES('Ayşenur Hanım ','aysenur@mail.com',5000,'Java','Izmir',38);
+INSERT INTO developers(name,email,salary,prog_lang,city,age) VALUES('Kübra Hanım','kubra@mail.com',4000,'JavaScript','Istanbul',32);
+INSERT INTO developers(name,email,salary,prog_lang,city,age) VALUES('Muhammed Bey','muhammed@mail.com',6000,'Java','Izmir',25);
+INSERT INTO developers(name,email,salary,prog_lang,city,age) VALUES('Fevzi Bey','fevzi@mail.com',6000,'Html','Istanbul',28);
+INSERT INTO developers(name,email,salary,prog_lang,city,age) VALUES('Enes Bey','enes@mail.com',5500,'Css','Ankara',28);
+INSERT INTO developers(name,email,salary,prog_lang,city,age) VALUES('Tansu Hanım','tansu@mail.com',5000,'Java','Bursa',32);
+INSERT INTO developers(name,email,salary,prog_lang,city,age) VALUES('Said Bey','said@mail.com',4500,'Html','Izmir',33);
+INSERT INTO developers(name,email,salary,prog_lang,city,age) VALUES('Mustafa Bey','mustafa@mail.com',4500,'Css','Bursa',32);
+INSERT INTO developers(name,email,salary,prog_lang,city,age) VALUES('Hakan Bey','hakan@mail.com',7000,'C++','Konya',38);
+INSERT INTO developers(name,email,salary,prog_lang,city,age) VALUES('Deniz Bey','deniz@mail.com',4000,'C#','Istanbul',30);
+INSERT INTO developers(name,email,salary,prog_lang,city,age) VALUES('Ummu Hanım','ummu@mail.com',4000,'C#','Bursa',29);
 
 
+CREATE TABLE contact_info(
+address_id int,
+street varchar(30),
+number int,	
+city varchar(30),
+FOREIGN KEY(address_id) REFERENCES developers(id)	
+);
+
+INSERT INTO contact_info VALUES(1,'Kaya Sok.',5,'Bursa');
+INSERT INTO contact_info VALUES(2,'Kaya Sok.',3,'Ankara');
+INSERT INTO contact_info VALUES(3,'Can Sok.',10,'Bursa');
+INSERT INTO contact_info VALUES(4,'Gül Sok.',12,'Ankara');
+INSERT INTO contact_info VALUES(5,'Can Sok.',4,'Afyon');
+INSERT INTO contact_info VALUES(6,'Taş Sok.',6,'Bolu');
+INSERT INTO contact_info VALUES(7,'Dev Sok.',6,'Sivas');
+INSERT INTO contact_info VALUES(8,'Dev Sok.',8,'Van');
 
 
+SELECT * FROM developers;
+SELECT * FROM contact_info;
+
+--Yaşı 25’den büyük olan developer isimlerini ve 
+--yaşı 30'dan küçük developerların kullandığı prog. dillerini
+--tekrarsız gösteren sorguyu yaziniz
+
+SELECT name FROM developers WHERE age>25--12
+UNION
+SELECT prog_lang FROM developers WHERE age<30--5
+
+--NOT:UNION/UNION ALL birleştirdiğimiz sorgular aynı sayıda sütunu göstermeli ve alt alta gelecek olan sütunun 
+--data tipi aynı olmalı
+
+--Yaşı 25’den büyük olan developer isimlerini ve 
+--yaşı 30'dan küçük developerların kullandığı prog. dillerini
+--tekrarlı gösteren sorguyu yaziniz
+SELECT name FROM developers WHERE age>25
+UNION ALL
+SELECT prog_lang FROM developers WHERE age<30
+
+--Java kullananların maaşını ve prog. dilini ve 
+--JavaScript kullananların yaşını ve prog. dilini
+--tekrarsız gösteren sorguyu yaziniz
+
+SELECT salary maas_yas, prog_lang FROM developers WHERE prog_lang='Java'
+UNION
+SELECT age maas_yas, prog_lang FROM developers WHERE prog_lang='JavaScript'
+
+--id si 8 olan developerın çalıştığı şehir ve maaşını
+--iletişim adresindeki şehir ve kapı nosunu görüntüleyiniz.
+SELECT city, salary maas_kapino FROM developers WHERE id=8
+UNION
+SELECT city, number maas_kapino FROM contact_info WHERE address_id=8
+
+--developers tablosundaki şehirler ve
+--calisanlar3 tablosunda sehirlerin
+--tümünü tekrarsız olarak listeleyiniz
+
+SELECT city FROM developers
+UNION
+SELECT sehir FROM calisanlar3
