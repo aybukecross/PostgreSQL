@@ -302,7 +302,7 @@ CREATE TABLE workers(
 	calisan_dogdugu_sehir varchar(50)
 );
 
-INSERT INTO workers VALUES(123456789, 'Ali Can', 'Istanbul'); 
+INSERT INTO workers VALUES(123456789, 'Ali Demir', 'Istanbul'); 
 INSERT INTO workers VALUES(234567890, 'Veli Cem', 'Ankara');  
 INSERT INTO workers VALUES(345678901, 'Mine Bulut', 'Izmir');
 
