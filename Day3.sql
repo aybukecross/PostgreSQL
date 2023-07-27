@@ -303,7 +303,7 @@ CREATE TABLE workers(
 );
 
 INSERT INTO workers VALUES(123456789, 'Ali Demir', 'Istanbul'); 
-INSERT INTO workers VALUES(234567890, 'Veli Cem', 'Ankara');  
+INSERT INTO workers VALUES(234567890, 'Veli Bakır', 'Ankara');  
 INSERT INTO workers VALUES(345678901, 'Mine Bulut', 'Izmir');
 
 SELECT * FROM workers;
