@@ -283,6 +283,75 @@ SELECT city FROM developers
 UNION
 SELECT sehir FROM calisanlar3
 
+--30-LIKE Cond.:WHERE komutu ile kullanılır, 
+--Sorgular belirli bir karakter dizisini(desen-pattern) kullanarak filtreleme yapmamızı sağlar
+--ILIKE:LIKE gibi ancak CASE INSENSITIVE dir.
+
+
+-- wildcard(joker-%):-->0 veya daha fazla karakteri temsil eder
+
+--Ismi E harfi ile başlayan developerların tüm bilgilerini görüntüleyiniz.
+SELECT * 
+FROM developers 
+WHERE name LIKE 'E%';
+
+SELECT * 
+FROM developers 
+WHERE name ILIKE 'e%';
+
+--a harfi ile biten şehirde çalışan dev isimlerini ve şehirlerini yazdiran QUERY yazin
+
+SELECT name,city
+FROM developers 
+WHERE city LIKE '%a'
+
+SELECT name,city
+FROM developers 
+WHERE city ILIKE '%A'
+
+--Ismi E ile başlayıp y harfi ile biten dev isimlerini ve maaşlarını yazdiran QUERY yazin
+
+SELECT name,salary
+FROM developers
+WHERE name LIKE 'E%y';--Ey
+
+--Ismi içinde 'an' olan dev isimlerini ve maaşlarını yazdiran QUERY yazin
+
+SELECT name,salary
+FROM developers
+WHERE name LIKE '%an%'
+
+--Ismi içinde e ve a olan devlerin tüm bilgilerini yazdiran QUERY yazin
+--hande,kemal
+
+SELECT *
+FROM developers
+WHERE name LIKE '%e%a%' OR name LIKE '%a%e%'
+
+SELECT *
+FROM developers
+WHERE name LIKE '%e%' AND name LIKE '%a%'
+
+
+-- underscore(_):sadece tek bir karakteri temsil eder.
+
+--Isminin ikinci harfi ü olan devlerin tum bilgilerini yazdiran QUERY yazin
+
+SELECT *
+FROM developers
+WHERE name LIKE '_ü%';
+
+--Kullandığı prog. dili 4 harfli ve üçüncü harfi v olan devlerin tum bilgilerini yazdiran QUERY yazin
+SELECT *
+FROM developers
+WHERE prog_lang LIKE '__v_';
+
+--Kullandığı prog. dili en az 5 harfli ve ilk harfi J olan devlerin tum bilgilerini yazdiran QUERY yazin.ÖDEVVV
+--HINT:sadece JavaScript olacak
+--Isminin 2. harfi e,4. harfi y olan devlerin tum bilgilerini yazdiran QUERY yazin. ÖDEVV
+--ismi boşluk içeren devlerin tum bilgilerini yazdiran QUERY yazin:ÖDEVVVV
+
+
 /*-------- ÖDEV --------
 Veritabanında bulunan bir tabloya yeni veriler eklemek ve mevcut verileri güncellemek için "UPDATE" komutu kullanılır. Bu ödevde, mevcut bir tabloyu güncelleme işlemleri yapmanızı istiyorum.
 
